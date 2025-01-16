@@ -1,0 +1,235 @@
+:root {
+    --ana-mor: #6a1b9a;
+    --acik-mor: #f3e6ff;
+    --koyu-mor: #4a148c;
+    --orta-mor: #8e24aa;
+    --pastel-mor: #6f2f83;
+    --beyaz: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--acik-mor), var(--pastel-mor));
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--beyaz);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(74, 20, 140, 0.1);
+}
+
+/* Header Stilleri */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--ana-mor);
+}
+
+h1 {
+    color: var(--koyu-mor);
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: var(--orta-mor);
+    margin: 20px 0;
+    font-size: 1.5em;
+    padding-left: 10px;
+    border-left: 4px solid var(--ana-mor);
+}
+
+.ogretmen-bilgi {
+    color: var(--ana-mor);
+    font-style: italic;
+}
+
+/* Section Stilleri */
+section {
+    background-color: rgba(243, 230, 255, 0.3);
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--pastel-mor);
+}
+
+/* Duyuru Section'ı */
+.duyuru {
+    background-color: #fff3e0;
+    border-left: 5px solid #ff9800;
+}
+
+/* Liste Stilleri */
+ul, ol {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+li {
+    margin: 10px 0;
+    color: #333;
+}
+
+ul li ul {
+    margin-top: 5px;
+}
+
+/* Sınıf Kartları (Hub sayfası için) */
+.sinif-kartlari {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.sinif-kart {
+    background: var(--beyaz);
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid var(--ana-mor);
+    transition: all 0.3s ease;
+}
+
+.sinif-kart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.2);
+    background-color: var(--acik-mor);
+}
+
+.sinif-kart h3 {
+    color: var(--koyu-mor);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Geri Dönüş Butonu */
+.geri-don {
+    margin: 0 0 20px 0;
+}
+
+.geri-don a {
+    color: var(--ana-mor);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 2px solid var(--ana-mor);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.geri-don a:hover {
+    background-color: var(--ana-mor);
+    color: var(--beyaz);
+}
+
+/* Linkler */
+a {
+    color: var(--ana-mor);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--koyu-mor);
+    text-decoration: underline;
+}
+
+/* Öneriler Section'ı */
+.oneriler ol li {
+    background-color: var(--beyaz);
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* LGS Bilgi Section'ı (8. sınıf için) */
+.lgs-bilgi {
+    background-color: #e8eaf6;
+    border-left: 5px solid #3f51b5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px solid var(--pastel-mor);
+    color: var(--ana-mor);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    .sinif-kartlari {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Özel Efektler */
+.duyuru p {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+/* Yazdırma Stilleri */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .geri-don {
+        display: none;
+    }
+} 
